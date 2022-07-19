@@ -14,6 +14,7 @@
 		5E04268A2885E9B3008CDCFC /* Audi structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0426892885E9B3008CDCFC /* Audi structure.swift */; };
 		5E04268F2885EA23008CDCFC /* Mersedes structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E04268E2885EA23008CDCFC /* Mersedes structure.swift */; };
 		5E0426912885EA3D008CDCFC /* Lada structure .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0426902885EA3D008CDCFC /* Lada structure .swift */; };
+		5E6FA810288734B900944B0F /* Cars properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6FA80F288734B900944B0F /* Cars properties.swift */; };
 		5EA5D6122884881900461213 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5D6112884881900461213 /* main.swift */; };
 		5EA5D61928848CB500461213 /* Car Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5D61828848CB500461213 /* Car Protocol.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		5E0426892885E9B3008CDCFC /* Audi structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Audi structure.swift"; sourceTree = "<group>"; };
 		5E04268E2885EA23008CDCFC /* Mersedes structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mersedes structure.swift"; sourceTree = "<group>"; };
 		5E0426902885EA3D008CDCFC /* Lada structure .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lada structure .swift"; sourceTree = "<group>"; };
+		5E6FA80F288734B900944B0F /* Cars properties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cars properties.swift"; sourceTree = "<group>"; };
 		5EA5D60E2884881900461213 /* AutoShop */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AutoShop; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA5D6112884881900461213 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5EA5D61828848CB500461213 /* Car Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car Protocol.swift"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		5E04268D2885E9F7008CDCFC /* Dealerships */ = {
 			isa = PBXGroup;
 			children = (
+				5E6FA80F288734B900944B0F /* Cars properties.swift */,
 				5E0426852885E3F4008CDCFC /* Dealership BMW.swift */,
 			);
 			path = Dealerships;
@@ -103,9 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				5EA5D6112884881900461213 /* main.swift */,
-				5E04268C2885E9E2008CDCFC /* Protocols */,
-				5E04268B2885E9BD008CDCFC /* Structures cars */,
 				5E04268D2885E9F7008CDCFC /* Dealerships */,
+				5E04268B2885E9BD008CDCFC /* Structures cars */,
+				5E04268C2885E9E2008CDCFC /* Protocols */,
 			);
 			path = AutoShop;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				5E0426842885E0C8008CDCFC /* Honda structure.swift in Sources */,
 				5EA5D6122884881900461213 /* main.swift in Sources */,
 				5E0426882885E989008CDCFC /* BMW structure.swift in Sources */,
+				5E6FA810288734B900944B0F /* Cars properties.swift in Sources */,
 				5E0426912885EA3D008CDCFC /* Lada structure .swift in Sources */,
 				5E04268F2885EA23008CDCFC /* Mersedes structure.swift in Sources */,
 				5E0426822885DE12008CDCFC /* Dealership Protocol.swift in Sources */,

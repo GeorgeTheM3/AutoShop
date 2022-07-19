@@ -20,24 +20,41 @@ class DealershipBMW: DealershipProtocol {
     }
     
     func offerAccessories(accessories: [String]) {
-        print("OfferAccessories \(accessories) done")
+        print("Offer Accessories \(accessories) done")
     }
     
     func presaleService(car: CarProtocol) {
-        print("PresaleService with \(car) done")
+        
+        print("Presale Service with \(car.model) done")
     }
     
     func addToShowroom(car: CarProtocol) {
-        print("AddToShowroom with \(car) done")
+        var auto: CarProtocol
+        for _ in stockCars {
+            if let index = stockCars.firstIndex(where: {$0.model == car.model}) {
+                auto = stockCars.remove(at: index)
+                showroomCars.append(auto)
+                print("Add To Showroom with \(car) done")
+                break
+            }
+        }
     }
     
-    func selectCar(car: CarProtocol) {
-        print("SelectCar with \(car) done")
+    func sellCar(car: CarProtocol) {
+        print("Sell Car with \(car) done")
     }
     
-    func orderCar(car: CarProtocol) {
-        stockCars.append(car)
-        print("OrderCar \(car) done")
+    
+    // Метод генерирует рандомный элемент. Рандомный вообще или рандомный из ранее созданных 5 машин?
+    
+    func orderCar() {
+        stockCars.append(BMW(model: modelsBMW.randomElement()!,
+                             color: colorsCars.randomElement()!,
+                             buildDate: 2022,
+                             price: price.randomElement()!,
+                             accessories: [],
+                             isServiced: false))
+        print("Order Car done")
     }
     
     init(name: String, showroomCapacity: Int, stockCars: [CarProtocol], showroomCars: [CarProtocol]){

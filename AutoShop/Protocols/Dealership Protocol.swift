@@ -17,8 +17,6 @@ protocol DealershipProtocol {
     func offerAccessories(accessories: [String])
     func presaleService(car: CarProtocol)
     func addToShowroom(car: CarProtocol)
-    func selectCar(car: CarProtocol)
-    //По условию слудюущий метод не должен принимать входных параметров
-    //Как здесь может не быть вхожного параметра если на парковке склада у нас хранится тип CarProtocol?
-    func orderCar(car: CarProtocol)
+    func sellCar(car: CarProtocol)
+    func orderCar()
 }
