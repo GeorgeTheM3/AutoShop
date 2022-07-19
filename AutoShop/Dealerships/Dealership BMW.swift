@@ -20,6 +20,7 @@ class DealershipBMW: DealershipProtocol {
     }
     
     func offerAccessories(accessories: [String]) {
+        
         print("Offer Accessories \(accessories) done")
     }
     
@@ -35,12 +36,19 @@ class DealershipBMW: DealershipProtocol {
                 auto = stockCars.remove(at: index)
                 showroomCars.append(auto)
                 print("Add To Showroom with \(car) done")
+                presaleService(car: auto)
                 break
             }
         }
     }
     
     func sellCar(car: CarProtocol) {
+        if !car.isServiced {
+            presaleService(car: car)
+        }
+        if car.accessories.isEmpty {
+            offerAccessories(accessories: accessories)
+        }
         print("Sell Car with \(car) done")
     }
     

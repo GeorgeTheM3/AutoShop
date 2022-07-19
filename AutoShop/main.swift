@@ -18,9 +18,11 @@ print(dealerBMW.stockCars.count)
 print(dealerBMW.showroomCars.count)
 
 dealerBMW.addToShowroom(car: bmw1 )
-dealerBMW.addToShowroom(car: dealerBMW.stockCars[1] )
-dealerBMW.offerAccessories(accessories: accessories)
+//dealerBMW.addToShowroom(car: dealerBMW.stockCars[1] )
+//dealerBMW.offerAccessories(accessories: accessories)
 
 print(dealerBMW.stockCars.count)
 
 print(dealerBMW.showroomCars.count)
+
+dealerBMW.sellCar(car: bmw1)
