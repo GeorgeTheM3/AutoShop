@@ -16,35 +16,35 @@ struct BMW: CarProtocol {
     var isServiced: Bool
 }
 
-var bmw1 = BMW(model: " BMW 1 series",
+var bmw1: CarProtocol = BMW(model: "BMW 1 series",
                  color: "Blue",
                  buildDate: 2020,
                  price: 2_400_000,
                  accessories: [],
                  isServiced: false)
 
-var bmw2 = BMW(model: "BMW X5",
+var bmw2: CarProtocol = BMW(model: "BMW X5",
                  color: "Black",
                  buildDate: 2021,
                  price: 5_400_000,
                  accessories: ["М пакет"],
                  isServiced: false)
 
-var bmw3 = BMW(model: "BMW 7 series",
+var bmw3: CarProtocol = BMW(model: "BMW 7 series",
                  color: "White",
                  buildDate: 2022,
                  price: 7_400_000,
                  accessories: ["спортивные сидения", "камеры кругового обзора", "мультируль" ],
                  isServiced: false)
 
-var bmw4 = BMW(model: "BMW 4 series",
+var bmw4: CarProtocol = BMW(model: "BMW 4 series",
                  color: "Blue",
                  buildDate: 2020,
                  price: 4_500_000,
                  accessories: [],
                  isServiced: false)
 
-var bmw5 = BMW(model: "BMW X7",
+var bmw5: CarProtocol = BMW(model: "BMW X7",
                  color: "Black",
                  buildDate: 2021,
                  price: 10_000_000,

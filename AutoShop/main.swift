@@ -9,6 +9,8 @@ import Foundation
 
 var dealerBMW = DealershipBMW(name: "AUTODOM",
                               showroomCapacity: 10,
-                              stockCars: [bmw1,bmw2,bmw4],
-                              showroomCars: [bmw3,bmw5])
+                              stockCars: [bmw1],
+                              showroomCars: [])
 
+
+dealerBMW.sellCar(car: &bmw1)
