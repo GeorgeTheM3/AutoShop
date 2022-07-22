@@ -15,8 +15,8 @@ protocol DealershipProtocol {
     var cars: Int { get }
     
     func offerAccessories(accessories: [String])
-    func presaleService(car: CarProtocol)
-    func addToShowroom(car: CarProtocol)
-    func sellCar(car: CarProtocol)
+    func presaleService(car: inout CarProtocol)
+    func addToShowroom(car: inout CarProtocol)
+    func sellCar(car: inout CarProtocol)
     func orderCar()
 }

@@ -20,40 +20,42 @@ class DealershipBMW: DealershipProtocol {
     }
     
     func offerAccessories(accessories: [String]) {
-        
-        print("Offer Accessories \(accessories) done")
+        print("Please buy \(accessories.randomElement()!)")
     }
     
-    func presaleService(car: CarProtocol) {
-        
-        print("Presale Service with \(car.model) done")
+    func presaleService(car: inout CarProtocol) {
+        guard !car.isServiced else {return print("Presale service with \(car.model) done")}
+        car.isServiced = true
+        print("\(car.model) go presale service")
     }
     
-    func addToShowroom(car: CarProtocol) {
-        var auto: CarProtocol
-        for _ in stockCars {
+    func addToShowroom(car: inout CarProtocol) {
+        for var auto in stockCars {
             if let index = stockCars.firstIndex(where: {$0.model == car.model}) {
-                auto = stockCars.remove(at: index)
+                stockCars.remove(at: index)
                 showroomCars.append(auto)
                 print("Add To Showroom with \(car) done")
-                presaleService(car: auto)
+                presaleService(car: &auto)
                 break
             }
         }
     }
     
-    func sellCar(car: CarProtocol) {
-        if !car.isServiced {
-            presaleService(car: car)
-        }
-        if car.accessories.isEmpty {
+    func sellCar(car: inout CarProtocol) {
+        if let index = showroomCars.firstIndex(where: {$0.model == car.model}) {
             offerAccessories(accessories: accessories)
+            showroomCars.remove(at: index)
+        } else {
+            if let index = stockCars.firstIndex(where: {$0.model == car.model}) {
+                addToShowroom(car: &car)
+                offerAccessories(accessories: accessories)
+                showroomCars.remove(at: index)
+            } else {
+                orderCar()
+            }
         }
-        print("Sell Car with \(car) done")
+        print("Sell Car \(car.model) done")
     }
-    
-    
-    // Метод генерирует рандомный элемент. Рандомный вообще или рандомный из ранее созданных 5 машин?
     
     func orderCar() {
         stockCars.append(BMW(model: modelsBMW.randomElement()!,
@@ -72,4 +74,31 @@ class DealershipBMW: DealershipProtocol {
         self.showroomCars = showroomCars
     }
     
+}
+
+extension DealershipBMW: SpecialOffer {
+    func checkAutoForMakeSpecialOffer() {
+        for var car in stockCars{
+            if car.buildDate < 2022 {
+                makeSpecialOffer(car: &car)
+                addToShowroom(car: &car)
+            }
+        }
+        for var car in showroomCars {
+            if car.buildDate < 2022 {
+                makeSpecialOffer(car: &car)
+            }
+        }
+    }
+    
+    func addEmergencyPack(car: inout CarProtocol) {
+        car.accessories.append("Аптечка и огнетушитель")
+    }
+    
+    func makeSpecialOffer(car: inout CarProtocol) {
+        if car.buildDate < 2022 {
+            car.price = Int(Double(car.price) * 0.85)
+            addEmergencyPack(car: &car)
+        }
+    }
 }
